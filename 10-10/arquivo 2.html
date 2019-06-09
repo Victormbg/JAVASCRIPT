@@ -1,0 +1,62 @@
+﻿<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Documento sem título</title>
+<script>
+	function funcao1(){
+		var x1 = document.getElementById('tvalor1').value;
+		alert(x1);
+	}
+	function funcao2(){
+		var x1 = document.getElementById('tvalor1').value;
+		document.getElementById('tvalor2').value = x1;
+		document.getElementById('tvalor1').value = '';
+	}
+	function funcao3(){
+		var x1 = document.getElementById('tvalor1').value;
+		var x2 = document.getElementById('tvalor2').value;
+		
+		document.getElementById('tvalor1').value = '';
+		document.getElementById('tvalor2').value = '';
+		
+		var x3 = x1*                        x2
+		document.getElementById('tvalor3').value = x3;
+	}
+	function funcao4(){
+		var x1 = document.getElementById('tvalor1').value;
+		document.getElementById('tvalor1').value = '';
+		
+		document.getElementById('titulo').innerHTML = x1;
+		
+	}
+	function funcao5(){
+		var x1 = document.getElementById('tvalor1').value;
+		var x2 = document.getElementById('tvalor2').value;
+		
+		if(x1 =='' || x2==''){
+			alert('Uma das caixas esta vazia')
+		}else{
+			x3 = parseFloat(x1)+parseFloat(x2);
+		}
+	}
+</script>
+</head>
+<body>
+<h1 id="titulo">Formulario e Javascript</h1>
+<form name="form1" method="post" action="">
+Valor 1: <input type="text" id="tvalor1">
+<br>
+Valor 2: <input type="text" id="tvalor2">
+<br>
+Valor 3: <input type="text" id="tvalor3">
+<br>
+<input type="button" value="Função 1" onClick="funcao1()">
+<input type="button" value="Função 2" onClick="funcao2()">
+<input type="button" value="Função 3" onClick="funcao3()">
+<input type="button" value="Função 4" onClick="funcao4()">
+<input type="button" value="Função 5" onClick="funcao5()">
+</form>
+<p id="texto">texto aqui</p>
+</body>
+</html>

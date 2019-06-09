@@ -1,0 +1,61 @@
+﻿<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Documento sem título</title>
+<script>
+	
+function calc(){
+var result,n1,n2;
+	
+	if(document.form1.n1.value==''){
+	document.form1.n2.value=='';
+	alert("necessario preencher os espaços");
+		
+	if(document.form1.op.value ==1 ){
+	result=parseFloat(document.form.n1.value)+parseFloat(document.forms.n2.value);
+	alert("A soma foi:+result");
+	
+	else if(document.form1.op.value ==2 ){
+	result=parseFloat(document.form1.n1.value)-parseFloat(document.forms.n2.value);
+	alert("A diminuicao foi:+result");
+	
+	else if(document.form1.op.value ==3 ){
+	result=parseFloat(document.form1.n1.value)*parseFloat(document.forms.n2.value);
+	alert("A multiplicação foi:+result");
+	                                                                                                                       
+	else(document.form1.op.value ==4 )
+	result=parseFloat(document.form1.n1.value)/parseFloat(document.forms.n2.value);
+	alert("A divisao foi:+result");
+			}	
+		}
+	}
+}
+}
+</script>
+</head>
+<body>
+<form name="form1">
+<center>
+<h1>Programa Calculadora</h1>
+<label>Informe o primeiro número: </label> <input type="text"> 
+<br>	
+<label>Informe o segundo número: </label> <input type="text">
+<br>
+<br>
+Escolha a operação:
+<select>
+	<option>Escolha</option>
+	<option>Adicao</option>
+	<option>Diminuicao</option>
+	<option>Multiplicação</option>
+	<option>Divisão</option>
+</select>
+<br>
+<br>
+<input type="submit" value="Enviar">
+<input type="reset" value="Limpar">
+</center>
+</form>
+</body>
+</html>

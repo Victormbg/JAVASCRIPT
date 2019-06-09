@@ -1,0 +1,123 @@
+﻿<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>FORMULARIO CONTATO</title>
+<script>
+
+function somente_numero(e){
+	tecla = (window.event)?event.keyCode:e.which;
+	if((tecla > 47 && tecla <58)){
+		return true;
+	}
+	else{
+		if((tecla > 95 && tecla <106)){
+			return true;
+		}
+	else{
+		if(tecla == 8 || tecla == 46){
+			return true;
+		}
+		else{
+			return false;
+		}
+	
+		}
+	}
+}
+
+function mascara_data(objeto){
+	if(objeto.value.length == 2){
+		objeto.value = objeto.value + '/';
+	}
+	if(objeto.value.length == 5
+	  ){
+		objeto.value = objeto.value + '/';
+	}
+}
+
+function mascara_tel(objeto){
+	if(objeto.value.length == 0){
+		objeto.value = objeto.value + '(';
+	}
+	if(objeto.value.length == 3){
+		objeto.value = objeto.value + ')';
+	}
+	if(objeto.value.length == 8){
+		objeto.value = objeto.value + '-';
+	}
+}	
+
+function calcid(){
+	var ano = document.form1.data_nasc.value;
+	var ano_nasc,ano_atual,dia,mes,dia_nasc,mes_nasc,idade;
+	var data = new Date();
+	ano_atual = data.getFullYear();
+	mes = data.getMonth()+1;
+	dia = data.getDate();
+	mes_nasc = ano.slice(3,5);
+	dia_nasc = ano.slice(0,2);
+	ano_nasc = ano.slice(6,10);
+	if(ano_nasc > ano_atual){
+		alert("O Ano de Nascimento é Superior ao Ano Atual");
+	}
+	else{
+		idade = ano_atual - ano_nasc;
+		if(mes_nasc == mes){
+			if(dia_nasc > dia){
+				idade--;
+			}
+		}
+	else{
+		if(mes_nasc > mes){
+			idade--;
+			}
+		}
+	}
+if(document.form1.data_nasc.value==""){
+	document.form1.idade.value = "";
+}
+else{
+	document.form1.idade.value = idade;
+}
+
+}	
+	
+	
+	
+</script>
+</head>
+<body>
+<form name="form1">
+<h1>Formulário de Contato</h1>
+<label>Informe o CPF:</label>
+<input type="text" onKeyDown="return somente_numero(event)">
+<br>
+<br>
+<label>Informe o Nome:</label>
+<input type="text">
+<br>
+<br>
+<label>Informe a data de nascimento:</label><input type="text" name="data_nasc" onKeyDown="return somente_numero(event)" placeholder="99/99/9999" onKeyPress="mascara_data(this)" onblur="calcid()"><label>Idade:</label><input type="text" name="idade" onKeyDown="return somente_numero(event)" >
+<br>
+<br>
+<label>Informe o Telefone:</label>
+<input type="text" onKeyDown="return somente_numero(event)" placeholder="(xx)xxxx-xxxx" onKeyPress="mascara_tel(this)">
+<br>
+<br>
+<label>Informe o E-mail:</label>
+<input type="text">
+<br>
+<br>
+Deixe seu comentario:<br>
+<textarea></textarea>
+<br>
+<br>
+<input type="button" value="Enviar">
+<input type="button" value="Limpar">
+</form>
+
+
+
+</body>
+</html>

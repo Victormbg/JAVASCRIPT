@@ -1,0 +1,27 @@
+﻿<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Documento sem título</title>
+<script language="javascript">
+	var nome; var altura;var sexo; var macho ; var femea ; var calculo1; var calculo2; 
+	
+	nome=window.prompt("Digite o nome:");
+	altura=window.prompt("Digite a altura:");
+	sexo=window.prompt("Digite sexo:");
+	
+	macho = (72.7 * altura) - 58
+	femea = (62.1 * altura) - 44.7
+	
+	if(sexo == "macho"){
+	document.write("O Peso ideal para " +nome+ " e de " +macho.toFixed(2))	
+	}
+	else{
+	document.write("O Peso ideal para " +nome+ " e de " +femea.toFixed(2))	
+	}
+ 	
+</script>
+</head>
+<body>
+</body>
+</html>

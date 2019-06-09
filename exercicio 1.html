@@ -1,0 +1,185 @@
+﻿<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>exercicio</title>
+<script>
+	
+function somente_numero(e){
+	tecla = (window.event)?event.keyCode:e.which;
+	if((tecla > 47 && tecla <58)){
+		return true;
+	}
+	else{
+		if((tecla > 95 && tecla <106)){
+			return true;
+		}
+	else{
+		if(tecla == 8 || tecla == 46){
+			return true;
+		}
+		else{
+			return false;
+		}
+	
+		}
+	}
+}
+
+function mascara_chegada(objeto){
+	if(objeto.value.length == 2){
+		objeto.value = objeto.value + '/';
+	}
+	if(objeto.value.length == 5
+	  ){
+		objeto.value = objeto.value + '/';
+	}
+}
+	function mascara_saida(objeto){
+	if(objeto.value.length == 2){
+		objeto.value = objeto.value + '/';
+	}
+	if(objeto.value.length == 5
+	  ){
+		objeto.value = objeto.value + '/';
+	}
+}
+
+function mascara_tel(objeto){
+	if(objeto.value.length == 0){
+		objeto.value = objeto.value + '(';
+	}
+	if(objeto.value.length == 3){
+		objeto.value = objeto.value + ')';
+	}
+	if(objeto.value.length == 8){
+		objeto.value = objeto.value + '-';
+	}
+}
+
+function mascara_cel(objeto){
+	if(objeto.value.length == 0){
+		objeto.value = objeto.value + '(';
+	}
+	if(objeto.value.length == 3){
+		objeto.value = objeto.value + ')';
+	}
+	if(objeto.value.length == 9){
+		objeto.value = objeto.value + '-';
+	}
+}
+
+function mascara_cpf(objeto){
+	if(objeto.value.length == 3){
+		objeto.value = objeto.value + '.';
+	}
+	if(objeto.value.length == 7){
+		objeto.value = objeto.value + '.';
+	}
+	if(objeto.value.length == 11){
+		objeto.value = objeto.value + '-';
+	}
+}
+	
+function mascara_rg	(objeto){
+	if(objeto.value.length == 2){
+		objeto.value = objeto.value + '.';
+	}
+	if(objeto.value.length == 6){
+		objeto.value = objeto.value + '.';
+	}
+	if(objeto.value.length == 10){
+		objeto.value = objeto.value + '-';
+	}
+}
+	function mostrar(){
+		alert('o valor é')
+	}
+</script>
+</head>
+
+<body>
+<h1>Preencha o formulário abaixo para pré-reserva!</h1>
+
+<h3>Dados Pessoais:</h3>
+
+<form action="form1" method="post">
+    <div>
+        <label for="nome">Nome Completo (igual ao RG):<br></label>
+        <input type="text" id="nome" />
+    </div>
+    <div>
+        <label for="cpf">CPF:<br></label>
+        <input type="text" onKeyDown="return somente_numero(event)" maxlength="14" onKeyPress="mascara_cpf(this)" />
+    </div>
+<div>
+    <label for="endereco">Endereço:<br></label>
+    <textarea id="endereco"></textarea>
+</div>
+
+	</form>
+
+<form action="form2" >
+	
+	
+	  <div>
+        <label for="email">Email:<br></label>
+        <input type="text" id="email" />
+    </div>
+    <div>
+        <label for="rg">RG:<br></label>
+        <input type="text" onKeyDown="return somente_numero(event)" maxlength="13" onKeyPress="mascara_rg(this)" />
+    </div>
+<div>
+    <label for="telefone">Telefone:<br></label>
+    <input type="text" onKeyDown="return somente_numero(event)" placeholder="(xx)xxxx-xxxx" onKeyPress="mascara_tel(this)" maxlength="13"/>
+</div>
+	<div>
+    <label for="celular">Celular:<br></label>
+    <input type="text" onKeyDown="return somente_numero(event)" placeholder="(xx)xxxxx-xxxx" onKeyPress="mascara_cel(this)" maxlength="14"/>
+</div>
+</form>
+	<form action="form3">
+		
+      <h3>Dados de Hospedagem:</h3> 
+       
+       <div>
+        <label for="hotel">Hotel:<br></label>
+        <select name="select">
+  <option value="selecione1" selected>-- selecione o hotel --</option> 
+  <option value="valor1" >Ecopark Villa das Crianças</option>
+  <option value="valor2">Hotel Villa das Crianças</option>
+</select>
+    </div>
+    <div>
+        <label for="datachegada">Data de Chegada:<br></label>
+        <input type="text" name="datac" onKeyDown="return somente_numero(event)" placeholder="xx/xx/xxxx" onKeyPress="mascara_chegada(this)" maxlength="10" />
+    </div>
+<div>
+    <label for="datasaida">Data de Saída:<br></label>
+    <input type="text" name="datas" onKeyDown="return somente_numero(event)" placeholder="xx/xx/xxxx" onKeyPress="mascara_saida(this)" maxlength="10"/>
+</div>
+	<div>
+    <label for="apartamento">Tipo de Apartamento:<br></label>
+           <select name="select">
+  <option value="selecione2" selected></option> 
+  <option value="valor3" >Standard</option>
+  <option value="valor4">Padrão</option>
+  <option value="valor5">Luxo</option>
+</select>
+</div>
+<h5>*A reserva só é garantida após o pagamento</h5>
+	<br>
+	
+	<form action="form4"></form>	
+	
+       <input type="button" value="Enviar" onClick="mostrar()">
+        
+	
+			</form>
+
+
+
+
+</body>
+</html>

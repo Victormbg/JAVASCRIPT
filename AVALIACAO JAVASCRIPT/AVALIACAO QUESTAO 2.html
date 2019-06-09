@@ -1,0 +1,33 @@
+﻿<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>exercicio 2</title>
+</head>
+
+<body>
+<script>
+var nome,nota1,nota2,nota3,medfin;
+	
+	nome=window.prompt('digite seu nome: ');
+	nota1=window.prompt('digite a nota de portugues: ');
+	nota2=window.prompt('digite a nota de matematica: ');
+	nota3=window.prompt('digite a nota de conhecimentos gerais: ');
+	
+	medfin=(parseFloat(nota1) + parseFloat(nota2) + parseFloat(nota3))/3
+	
+	document.write("Caro "+nome+ " ,sua nota em portugues é "+nota1+" ,em matematica é "+nota2+" e conhecimentos gerais é "+nota3+" e "+medfin+" e você está " );
+	
+	
+	if(nota1>=7 && nota2>=7 && nota3>=7) {
+		document.write('Aprovado');}
+	else{
+		document.write('Reprovado');
+	}
+	
+
+	
+	</script>
+
+</body>
+</html>

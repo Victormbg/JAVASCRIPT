@@ -1,0 +1,166 @@
+<!DOCTYPE HTML>
+<html lang="pt-br">
+<head>
+	<meta charset="ISO-8859-1" />
+	<link rel="stylesheet" href="estilo.css" />
+	<script type="text/javascript" src="funcao.js"></script>
+	<title> FORMULÁRIO DE RESERVA</title>
+</head>
+<body>
+	<h1>Preencha o formulário abaixo para pré-reserva</h1>
+	<form name="form1">
+		<fieldset>
+			<h2>Dados Pessoais</h2>
+			<table>
+				<tr>
+					<td>
+						<label for="nome">Nome Completo (igual ao RG)</label>
+					</td>
+					<td>
+						<label for="email">E-mail</label>
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<input type="text" name="nome" id="nomeid" size="30" />
+					</td>
+					<td>
+						<input type="text" name="email" size="30"/>
+					</td>
+				</tr>
+				<tr>
+					<td width="200">
+						<label for="cpf">CPF</label>
+					</td>
+					<td>
+						<label for="rg">RG</label>
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<input type="text" name="cpf" id="cpfid" 
+						onKeyDown="return somente_numero(event)" size="30" />
+					</td>
+					<td>
+						<input type="text" name="rg" id="rgid" 
+						onKeyDown="return somente_numero(event)" size="30" />
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<label for="endereco">Endereço</label>
+					</td>
+					<td>
+						<label for="telefone">Telefone</label>
+					</td>
+				</tr>
+				<tr>
+					<td rowspan="4" width="200">
+						<textarea rows="5" cols="31" name="endereco"></textarea>
+					</td>
+					<td>
+						<input type="text" name="tel" onkeypress="mascara_tel(this)" 
+						onKeyDown="return somente_numero(event)" size="30" />
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<label for="celular">Celular</label>
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<input type="text" name="cel" onkeypress="mascara_cel(this)" 
+						onKeyDown="return somente_numero(event)" size="30" />
+					</td>
+				</tr>
+			</table>
+			<h2>Dados de Hospedagem</h2>
+			<table>
+				<tr>
+					<td>
+						<label for="hotel">Hotel</label>
+					</td>
+					<td>
+						<label for="apt">Tipo de Apartamento</label>
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<select name="hotell" id="hotellid">
+							<option value="0">-- Selecione o Hotel --</option>
+							<option value="1">EcoPark Villa das Crianças</option>
+							<option value="2">Hotel Villa das Crianças</option>
+						</select>
+					</td>
+					<td>
+						<select name="aptt" id="apttid">
+							<option value="0"> </option>
+							<option value="1">Standard</option>
+							<option value="2">Padrão</option>
+							<option value="3">Luxo</option>
+						</select>
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<label for="dtc">Data de Chegada</label>
+						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+						<label for="dts">Data de Saída</label>
+					</td>
+					<td>
+						<label for="adultos">Adultos</label>
+						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+						<label for="criancas">Crianças (até 12 anos)</label>
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<input type="text" name="dtc" onkeypress="mascara_data(this)" 
+						onKeyDown="return somente_numero(event)" size="12" class="menor" />
+						&nbsp;&nbsp;&nbsp;&nbsp;
+						<input type="text" name="dts" onkeypress="mascara_data(this)" 
+						onKeyDown="return somente_numero(event)" size="12" class="menor"/>
+					</td>
+					<td>
+						<select name="adultos" id="adultosid" class="menor">
+							<option value="0"></option>
+							<option value="1">1</option>
+							<option value="2">2</option>
+							<option value="2">3</option>
+							<option value="2">4</option>
+							<option value="2">5</option>
+						</select>
+						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+						<select name="criancas" id="criancasid" class="menor">
+							<option value="0">0</option>
+							<option value="1">1</option>
+							<option value="2">2</option>
+							<option value="2">3</option>
+							<option value="2">4</option>
+							<option value="2">5</option>
+						</select>
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<h5>* A reserva só é garantida após o pagamento.</h5>
+					</td>
+				<tr>
+				<tr>
+					<td>
+						<input type="checkbox" name="aceitar" class="m" 
+						onclick="esconder();">
+						<label><a href="hospedagem_hotel.html" target="_blank">Li e aceito as condições acima.</a>
+						</label>
+					</td>
+					<td>
+						<input type="button" name="enviar" value="ENVIAR" 
+						onclick="submeter();" class="menor" style="visibility:hidden;"/>
+					</td>
+				<tr>
+			</table>
+		</fieldset>	
+	</form>
+</body>
+</html>

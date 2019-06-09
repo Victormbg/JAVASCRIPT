@@ -1,0 +1,174 @@
+function submeter(){
+	if (document.form1.nome.value != "" && document.form1.cpf.value != "" && 
+	document.form1.endereco.value != "" && document.form1.email.value != "" && 
+	document.form1.rg.value != "" && document.form1.tel.value != "" && 
+	document.form1.cel.value != "" && document.form1.dtc.value != "" && 
+	document.form1.dts.value != "" && document.form1.hotell.value != "0" && 
+	document.form1.aptt.value != "0" && document.form1.adultos.value != "0"){
+		if (document.form1.hotell.value == "1" && document.form1.aptt.value == "1"){
+			valor = "150";
+		}
+		else{
+			if (document.form1.hotell.value == "1" && document.form1.aptt.value == "2"){
+				valor = "250";
+			}
+			else{
+				if (document.form1.hotell.value == "1" && document.form1.aptt.value == "3"){
+					valor = "320";
+				}
+			}
+		}	
+		if (document.form1.hotell.value == "2" && document.form1.aptt.value == "1"){
+			valor = "90";
+		}
+		else{
+			if (document.form1.hotell.value == "2" && document.form1.aptt.value == "2"){
+				valor = "120";
+			}
+			else{
+				if (document.form1.hotell.value == "2" && document.form1.aptt.value == "3"){
+					valor = "160";
+				}
+			}
+		}
+		var dia_c,mes_c,dia_s,mes_s,data,periodo,diaria,valor,v_final,v_final_a,v_final_c;
+		var dt_cc = document.form1.dtc.value;
+		var dt_ss = document.form1.dts.value;
+		dia_c = dt_cc.slice(0,2);
+		mes_c = dt_cc.slice(3,5);
+		dia_s = dt_ss.slice(0,2);
+		mes_s = dt_ss.slice(3,5);
+		data = mes_s - mes_c;
+		if (data == 0){
+			periodo = dia_s - dia_c;
+			if (periodo > 15){
+				alert("Prezado Cliente, verifique por favor as datas de chegada e saída, pois as mesmas estão ultrapassando 15 dias")
+			}
+			else{
+				v_final_a = document.form1.adultos.value * valor * periodo;
+				v_final_c = (document.form1.criancas.value * valor * periodo)/2;
+				v_final =  parseFloat(v_final_a) + parseFloat(v_final_c);
+				alert('Sr(a) ' + document.form1.nome.value + ', a quantidade de diárias foi ' + periodo + ', portando o valor a ser pago será R$ ' + v_final.toFixed(2));
+			}
+		}
+		else{
+			if (data == 1){
+				periodo = (30 - dia_c) + parseFloat(dia_s);
+				if (periodo > 15){
+					alert("Prezado Cliente, verifique por favor as datas de chegada e saída, pois as mesmas estão ultrapassando 15 dias")
+				}
+				else{
+					v_final_a = document.form1.adultos.value * valor * periodo;
+					v_final_c = (document.form1.criancas.value * valor * periodo)/2;
+					v_final =  parseFloat(v_final_a) + parseFloat(v_final_c);
+					alert('Sr(a) ' + document.form1.nome.value + ', a quantidade de diárias foi ' + periodo + ', portando o valor a ser pago será R$ ' + v_final.toFixed(2));
+				}
+			}
+			else{
+				alert("Prezado Cliente, verifique por favor as datas de chegada e saída, pois as mesmas estão causando conflito")
+			}
+		}	
+		
+	}
+	else{
+		alert('Existem campos a serem preenchidos, favor verificar');
+	}
+	document.form1.aceitar.checked=false;
+	document.form1.enviar.style.visibility='hidden';
+}
+
+function esconder(){
+	if (document.form1.aceitar.checked==false){
+		document.form1.enviar.style.visibility='hidden';
+	}
+	else{
+		document.form1.enviar.style.visibility='visible';
+	}
+}
+
+function mascara_tel (objeto){
+	if(objeto.value.length == 0){
+		objeto.value = objeto.value + '(';
+	}
+	if(objeto.value.length == 3){
+		objeto.value = objeto.value + ')';
+	}
+	if(objeto.value.length == 8){
+		objeto.value = objeto.value + '-';
+	}
+}
+
+function mascara_cel (objeto){
+	if(objeto.value.length == 0){
+		objeto.value = objeto.value + '(';
+	}
+	if(objeto.value.length == 3){
+		objeto.value = objeto.value + ')';
+	}
+	if(objeto.value.length == 9){
+		objeto.value = objeto.value + '-';
+	}
+}
+
+function mascara_data (objeto){
+	if(objeto.value.length == 2){
+		objeto.value = objeto.value + '/';
+	}
+	if(objeto.value.length == 5){
+		objeto.value = objeto.value + '/';
+	}
+}
+				
+function calcid(){
+	var ano = document.form1.data_nasc.value;
+	var ano_nasc,ano_atual,dia,mes,dia_nasc,mes_nasc,idade;
+	var data = new Date();
+	ano_atual = data.getFullYear();
+	mes = data.getMonth()+1;
+	dia = data.getDate();
+	mes_nasc = ano.slice(3,5);
+	dia_nasc = ano.slice(0,2);
+	ano_nasc = ano.slice(6,10);
+	if (ano_nasc > ano_atual){
+		alert("O Ano de Nascimento é Superior ao Ano Atual");
+	}
+	else{
+		idade = ano_atual - ano_nasc;
+		if (mes_nasc == mes){
+			if(dia_nasc > dia){
+				idade--;
+			}
+		}
+		else{
+			if (mes_nasc > mes){
+				idade--;
+			}
+		}	
+	}
+	if (document.form1.data_nasc.value==""){
+		document.form1.idade.value = "";
+	}
+	else{
+		document.form1.idade.value = idade;
+	}
+}
+
+function somente_numero(e){
+		tecla = (window.event)?event.keyCode:e.which;
+		if ((tecla > 47 && tecla < 58)){
+			return true;
+		}
+		else{
+			if ((tecla > 95 && tecla < 106)){
+				return true;
+			}
+			else{
+				if (tecla == 8 || tecla == 46){
+					return true;
+				}
+				else{
+					return false;	
+				}
+			}	
+		}
+}

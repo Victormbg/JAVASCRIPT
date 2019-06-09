@@ -1,0 +1,35 @@
+﻿<html>
+<head>
+&lt;script language="javascript">
+function ponto(value, name, form){
+    if (value != "") {
+        msg = '';
+        
+        tamValue = value.length;
+        if (value.indexOf('.')>-1) {
+            msg = ('O valor digitado não está correto.\nVerifique se está no seguinte formato:\n\n=> 100,00 (para cem reais)\n=> 1000,00 (para mil reais)\n=> 10000,00 (para dez mil reais)\n\nObserve que este campo não aceita o caractere \'.\'.\n\n')
+        }
+        if (value.substring(tamValue-3, tamValue-2) != ',') {
+            msg = ('O valor digitado não está correto.\nVerifique se está no seguinte formato:\n\n=> 100,00 (para cem reais)\n=> 1000,00 (para mil reais)\n=> 10000,00 (para dez mil reais)\n\nObserve que este campo não aceita o caractere \'.\'.\n\n')    
+        }
+          
+        if (msg != "") {
+            alert(msg)
+            document.form.name.value = "";
+            document.form.name.focus();
+            return false;
+        } else {
+            return true;    
+        }
+    }
+}
+</script>
+</head>
+<body>
+
+<form name="form1">
+<input type="text" name="teste1" id="teste1" onchange="ponto(this.value, teste1, form1);" /><br />
+<input type="text" name="teste2" id="teste2" onchange="ponto(this.value, teste2, form1);" /><br />
+</form>
+
+</body></html>

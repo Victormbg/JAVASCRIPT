@@ -1,0 +1,37 @@
+﻿<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>exercicio 2</title>
+</head>
+
+<body>
+<script>
+var diaria0,diaria1,diaria2,diaria3,numdiaria;
+	
+	numdiaria=window.prompt('Digite a quantidade de dias que você pretende passar no nosso hotel: ')
+	
+	diaria0 = 160
+	diaria1 = (parseFloat(diaria0) + parseFloat(5.5)) * numdiaria
+	diaria2 = (parseFloat(diaria0) + parseFloat(6)) * numdiaria
+	diaria3 = (parseFloat(diaria0) + parseFloat(8)) * numdiaria
+
+	if(numdiaria>15){
+		document.write('o Valor total da sua estadia é de '+diaria1);
+	}
+	else{
+		if(numdiaria==15){
+			document.write('O Valor total da sua estadia é de '+diaria2);
+		}
+	else{
+		document.write('O Valor total da sua estadia é de '+diaria3);
+	}
+	}
+	
+		
+	
+	
+	</script>
+
+</body>
+</html>

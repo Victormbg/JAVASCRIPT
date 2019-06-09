@@ -1,0 +1,26 @@
+﻿<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Aula 3</title>
+<script language="javascript">
+	var distribuidora; var impostos;var valorcarro;var calculo1;var calculo2;var soma
+	
+	valorcarro=window.prompt("Digite o valor do carro:");
+	distribuidora=window.prompt("Digite a taxa da distribuidora sobre o carro:");
+	impostos=window.prompt("Digite a taxa de impostos sobre o carro:");
+	
+	
+ 	calculo1 = valorcarro * distribuidora/100  
+	calculo2 = valorcarro * impostos/100 
+	soma =  parseFloat(valorcarro)+parseFloat(calculo1)+parseFloat(calculo2)
+	
+	document.write("O valor do carro pela distribuidora "+calculo1+" e o valor de impostos sobre o carro de "+calculo2+" o valor total do carro e de "+soma+"<BR>");
+</script>
+
+
+</head>
+
+<body>
+</body>
+</html>

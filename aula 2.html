@@ -1,0 +1,40 @@
+﻿<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Aula 2</title>
+<script language="javascript">
+	var nome; var nota1;var nota2; var media;
+	
+	nome = window.prompt("Digite o seu nome:");
+	nota1 = window.prompt("Digite 1º nota:");
+	nota2 = window.prompt("Digite 2º nota:");
+	
+	media = (parseFloat(nota1) + parseFloat(nota2))/2
+	
+	document.write("A primeira nota de "+nome+" é "+nota1+" e a segunda nota é "+nota2+" é a média é "+media+"<BR>");
+
+	if(media>=7){
+		document.write("Aprovado");	
+	}
+	else if(media < 7 && media>=3){
+			document.write("Recuperação");
+		
+		}
+	      
+		else{		
+		document.write("Reprovado");
+	}
+	
+	
+	
+	
+	
+	</script>
+
+
+</head>
+
+<body>
+</body>
+</html>

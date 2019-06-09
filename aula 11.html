@@ -1,0 +1,33 @@
+﻿<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Aula 11</title>
+<script language="javascript">
+	var nome,horas,sb,sv,sl,dep,ir,inss,valordes;
+	
+	nome = window.prompt("Digite o seu nome: ");
+	sb = window.prompt("Digite o valor do salario: ");
+	horas = window.prompt("Digito o numero de horas trabalhadas: ");
+	dep = window.prompt("Digite o numero de dependentes");
+		
+	inss = sb * 0.11;
+	
+	ir = sb * 0.05;
+		
+	sv = parseFloat(horas * 22) + parseFloat(dep * 40);
+	
+	sl = parseFloat(sb)+parseFloat(sv) - (parseFloat(inss)+parseFloat(ir));
+	
+		
+	document.write ("Senhor " +nome+ " seu salario bruto e de " +sb+ " e o valor descontado  inss e de " +inss+ " e o irrf e de "+ir+ " e o salario liquido e de " +sl );
+		
+			
+</script>
+
+
+</head>
+
+<body>
+</body>
+</html>

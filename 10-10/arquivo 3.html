@@ -1,0 +1,35 @@
+﻿<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Documento sem título</title>
+</head>
+<script>
+function funcao6(){
+	var x1 = document.getElementById('opcao').value
+	alert(x1);
+}	function funcao7(){
+	document.getElementById('texto').style.color = '#100';
+	document.getElementById('texto').style.fontSize = '70px';
+	document.getElementById('texto').style.backgroundColor = "#800";
+}	
+	
+	
+	
+</script>
+<body>
+Opções:
+<select id="opcao">
+	<option value="1">Um</option>
+	<option value="2">Dois</option>
+	<option value="3">Tres</option>
+</select>
+<p id="texto">Melles ta aqui </p>
+
+<br>
+<input type="button" value="Clique 6" onClick="funcao6()">
+<input type="button" value="Clique 7" onClick="funcao7()">
+
+
+</body>
+</html>

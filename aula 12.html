@@ -1,0 +1,47 @@
+﻿<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Aula 11</title>
+<script language="javascript">
+var contador=1,result=0,votos,j=10,p=15,s=20,bn=0,contador=1;
+	
+votos = window.prompt("Para votar em Joao vote 10/Para votar em Pedro vote 15/Para votar em Samira vote 20/Ou se voce nao quiser ninguem ladrao vote branco ou nulo")
+
+	
+	  
+	while (contador<=5){
+		
+		
+	
+	
+	if (votos == j){
+			document.write("Voce votou em Joao");
+			result = parseInt(result) + parseInt(j);
+			contador++;
+	}
+	else{
+		if (votos == p){
+			document.write("Voce votou em Pedro");
+		}					
+	else{
+		if (votos == s){
+			document.write("Voce votou em Samira");
+		}
+	else{
+		if(votos == bn){
+			document.write("Voce votou Branco ou nulo");
+		}
+	else{
+			document.write("Voce digitou um numero incoreto")
+	  }
+    }
+  }
+}
+                           }
+</script>
+</head>
+
+<body>
+</body>
+</html>

@@ -1,0 +1,35 @@
+﻿<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Documento sem título</title>
+<script language="javascript">
+	var nome; var tempo;var salario; var tresanos ; var quatroanos ; var dezanos; var calculo1 ; var calculo2; 
+	
+	nome=window.prompt("Digite o nome:");
+	tempo=window.prompt("Digite o tempo de servico na empresa em anos:");
+	salario=window.prompt("Digite o valor do seu salario atual:");
+	
+	
+ 	if(tempo<= 3){
+		calculo1 = (salario * 0/100) + parseFloat(salario)
+		document.write("Senhor " +nome+ " o seu salario atual e de " +salario+ " com aumento de " +calculo1)
+	} 
+	
+	else{ 
+		if (tempo >= 4 && tempo <=10 ){ 
+	calculo2 = (salario * 10/100) + parseFloat(salario)
+	document.write("Senhor " +nome+ " o seu salario atual e de " +salario+ " com aumento de " +calculo2)
+	}	
+	
+	else{
+	calculo3 =  (salario * 15/100) + parseFloat(salario)
+	document.write("Senhor " +nome+ " o seu salario atual e de " +salario+ " com aumento de " +calculo3)
+	}
+		
+	}
+</script>
+</head>
+<body>
+</body>
+</html>
